@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Contratación</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body class="grey darken-fondo2">
+  <nav class="grey darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo"><img src="imgs/logoP4.png"  id="logoP"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="contratacion.html">Contratación</a></li>
+        <li><a href="comprobante.html">Comprobante</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        
+      </ul>
+      
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="contratacion.html">Contratación</a></li>
+        <li><a href="comprobante.html">Comprobante</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="grey darken-vacio">
+
+    <div class="container">
+      <div class="section">
+          <br><br>
+          <a id = "botonMostrarContacto" onclick="muestraContacto()" class="waves-effect waves-light btn disabled red">Contacto</a>
+          <a id = "botonMostrarEvento" onclick="muestraEvento()" class="waves-effect waves-light btn red">Evento</a>
+      </div>
+    </div>
+    <form>
+      <div style="display:block" class ="container grey lighten-3 estiloMenus" id="contenedorContacto"><!--En esta posición colocar el color representativo de la empresa-->
+        <h2>Contacto:</h2>
+        <div class = "section">
+          <div class="row">
+              <div class="input-field col l4 m6 s12 "> 
+                <i class="material-icons prefix red-text">perm_identity</i>
+                <input id="CURP" type="text" onchange="evaluaCURP()">
+                <label for="CURP">CURP</label>
+                <span><p id="helperCURP">Esperando...</p></span>
+              </div>
+              
+              <div class="input-field col l4 m6 s12 ">
+                <i class="material-icons prefix red-text">local_phone</i>  
+                <input id="telefono" type="tel" class="validate" maxlength="10" onchange="evalTelefono()">
+                <label for="telefono">Teléfono</label>
+                <span><p id="helperTelefono">Esperando...</p></span>
+              </div>
+              
+              <div class="input-field col l4 m12 s12">
+                <i class="material-icons prefix red-text">email</i>
+                <input id="email" type="email" class="validate">
+                <label for="email">Correo</label>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col l6 m6 s12">
+                  <div class="row">
+                      <div class="input-field col l12 ">
+                          <i class="material-icons prefix red-text">public</i>
+                          <input type="text" id="autocomplete-input" class="autocomplete">
+                          <label for="autocomplete-input">Estado</label>
+                      </div>
+                  </div>
+              </div>
+            <div class="col l6 m6 s12">
+              <div class="row">
+                <div class="input-field col l12">
+                  <i class="material-icons prefix red-text">public</i>
+                  <input type="text" id="delegacionesInput" class="estados">
+                  <label for="delegacionesInput">Delegación</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <div style="display:none" class="container grey lighten-3 estiloMenus" id="contenedorEvento">
+        <h2>Evento:</h2>
+        <div class="section">
+          <div class="row">
+            <div class="input-field col l12 m12 s12">
+              <i class="material-icons prefix red-text">event</i>
+              <select>
+                <option value="" disabled selected>--Escoja el tipo de evento--</option>
+                <option value="1">Bautizo</option>
+                <option value="2">Primera Comunión</option>
+                <option value="3">XV años</option>
+                <option value="4">Boda</option>
+                <option value="5">Cumpleaños</option>
+                <option value="6">Otro</option>
+              </select>
+              <label>Tipo de Evento:</label>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="input-field col l6 m6 s12">
+              <i class="material-icons prefix red-text">local_play</i>
+              <input id="fechaEvento" type="text" class="datepicker">
+              <label for="fecha">Fecha del evento:</label>
+          </div>
+            
+            <div class="input-field col l6 m6 s12">
+              <i class="material-icons prefix red-text">access_time</i>
+              <input id = "horaEvento"type="text" class="timepicker">
+              <label for= "horaEvento">Hora del evento:</label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+    <br>
+    <br>
+  </div>
+  <footer class="page-footer grey darken-fondo2">
+    <div class="container">
+      <div class="row">
+        <div class="col l12">
+          <h5 class="white-text">Inserte nombre de la Empresa</h5>
+          <p class="grey-text text-lighten-4">Inserte un buen slogan aquí</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"> Enlaces</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contactos</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Hecho en <a class="orange-text text-lighten-3" href="https://escom.ipn.mx">ESCOM</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/contratacion.js"></script>
+
+  </body>
+</html>
