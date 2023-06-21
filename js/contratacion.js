@@ -386,3 +386,15 @@
     }
 
   }
+
+  function delegacionVisual(){
+    var valor = document.getElementById("estados").value;
+    if(valor == "Ciudad de Mexico"){
+      var off = document.getElementById('delegaciones');
+      off.style.display = "block";
+    }else{
+      var off = document.getElementById('delegaciones');
+      off.style.display = "none";
+      document.getElementById('seleccionDelegacion').value="";
+    }
+  }
