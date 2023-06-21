@@ -143,3 +143,10 @@ li {
   border-radius: 20px;
   margin-bottom: 30px;
 }
+
+.containerModificar{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}

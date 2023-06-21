@@ -1,3 +1,26 @@
+<?php
+
+$Folio = rand(1,99);
+$Nombre = rand(1,99);
+$ApellidoPaterno = rand(1,99);
+$ApellidoMaterno = rand(1,99);
+$Correo = $_POST["correo"] ?? null;
+$CURP = $_POST["curp"] ?? null;
+$Telefono = $_POST["telefono"] ?? null;
+$EntidadFederativa = $_POST["entidadFederativa"] ?? null;
+$Alcaldia = $_POST["alcaldia"] ?? null;
+$Evento = $_POST["evento"] ?? null;
+$FechaEvento = $_POST["fechaEvento"] ?? null;
+$HoraEvento = $_POST["horaEvento"] ?? null;
+$NumeroInvitados = rand(1,99);
+$DJ= rand(1,99);
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +32,23 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+  <script>
+    function limpiarAtributosValue() {
+      // Obtener todos los elementos de entrada del formulario
+      var inputs = document.getElementsByTagName("input");
+
+      // Iterar sobre los elementos de entrada y limpiar los atributos "value"
+      for (var i = 0; i < inputs.length; i++) {
+        var input = inputs[i];
+        if (input.value !== "") {
+          input.value = "";
+        }
+      }
+    }
+  </script>
+
 </head>
 <body class="grey darken-fondo2">
   <nav class="grey darken-4" role="navigation">
@@ -48,21 +88,21 @@
           <div class="row">
               <div class="input-field col l4 m6 s12 "> 
                 <i class="material-icons prefix red-text">perm_identity</i>
-                <input id="CURP" type="text" onchange="evaluaCURP()" name="CURP">
+                <input value="<?php echo $CURP?>" id="CURP" type="text" onchange="evaluaCURP()" name="CURP" >
                 <label for="CURP">CURP</label>
                 <span><p id="helperCURP">Esperando...</p></span>
               </div>
               
               <div class="input-field col l4 m6 s12 ">
                 <i class="material-icons prefix red-text">local_phone</i>  
-                <input name="telefono" id="telefono" type="tel" class="validate" maxlength="10" onchange="evalTelefono()">
+                <input value="<?php echo $Telefono?>" name="telefono" id="telefono" type="tel" class="validate" maxlength="10" onchange="evalTelefono()">
                 <label for="telefono">Teléfono</label>
                 <span><p id="helperTelefono">Esperando...</p></span>
               </div>
               
               <div class="input-field col l4 m12 s12">
                 <i class="material-icons prefix red-text">email</i>
-                <input name="email" type="email" class="validate">
+                <input value="<?php echo $Correo?>" name="email" type="email" class="validate">
                 <label for="email">Correo</label>
             </div>
           </div>
@@ -140,14 +180,14 @@
           <div class="row">
             <div class="input-field col l12 m12 s12">
               <i class="material-icons prefix red-text">event</i>
-              <select id="eventosTipo" name="eventosTipo">
+              <select>
                 <option value="" disabled selected>--Escoja el tipo de evento--</option>
-                <option value="Bautizo">Bautizo</option>
-                <option value="Primera Comunión">Primera Comunión</option>
-                <option value="XV años">XV años</option>
-                <option value="Boda">Boda</option>
-                <option value="Cumpleaños">Cumpleaños</option>
-                <option value="Otro">Otro</option>
+                <option value="1">Bautizo</option>
+                <option value="2">Primera Comunión</option>
+                <option value="3">XV años</option>
+                <option value="4">Boda</option>
+                <option value="5">Cumpleaños</option>
+                <option value="6">Otro</option>
               </select>
               <label>Tipo de Evento:</label>
             </div>
@@ -156,13 +196,13 @@
             
             <div class="input-field col l6 m6 s12">
               <i class="material-icons prefix red-text">local_play</i>
-              <input name="fechaEvento" type="text" class="datepicker" placeholder="">
+              <input value="<?php echo $FechaEvento?>" name="fechaEvento" type="text" class="datepicker" placeholder="">
               <label for="fecha" >Fecha del evento:</label>
           </div>
             
             <div class="input-field col l6 m6 s12">
               <i class="material-icons prefix red-text">access_time</i>
-              <input name = "horaEvento" type="text" class="timepicker">
+              <input value="<?php echo $HoraEvento?>" name = "horaEvento" type="text" class="timepicker">
               <label for= "horaEvento">Hora del evento:</label>
             </div>
 
@@ -175,7 +215,7 @@
         <div class="row">
           <div class="input-field col l6 m6 s6 offset-l4">
             <input type="submit" class="btn">
-            <input type="reset" class="btn" value="Limpiar">
+            <button type="button" onclick="limpiarAtributosValue()"  class="btn">Limpiar</button>
           </div>
         </div>
       </div>
