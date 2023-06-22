@@ -12,7 +12,7 @@ $clave ="";
 $BaseDeDatos ="serv_dj";
 
 $enlace = mysqli_connect($servidor, $usuario, $clave,$BaseDeDatos);
-$sql = "SELECT*FROM admin_dj ORDER BY User";
+$sql = "SELECT*FROM serv_dj ORDER BY Folio";
 $resultado = mysqli_query($enlace, $sql);
 $numFilas = mysqli_num_rows($resultado);
 $arreglo = mysqli_fetch_array($resultado);
