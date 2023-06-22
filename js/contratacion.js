@@ -130,13 +130,18 @@
     var Evento = document.getElementById("eventosTipo").value;
     var DJ = document.getElementById("DJ").value;
     var Lugar =  document.getElementById("Lugar").value;
+
+    var Nombre = document.getElementById("Nombre").value;
+    var Paterno = document.getElementById("ApPat").value;
+    var Materno = document.getElementById("ApMat").value;
+
     var Boton = document.getElementById("MandarForm");
     /*console.log(CURP+","+Tel+","+Email+","+Estado+","+Delegacion+","+Evento+","+DJ+","+Lugar+"\n");
     console.log(CURP=='Correcto');
     console.log(Tel=='Correcto');
     console.log(Email=="Correcto");
     console.log(Estado!="" && Evento!="" && DJ!="" && Lugar!="");*/
-    if(CURP=='Correcto' && Tel=="Correcto" && Email=="Correcto" && Estado!="" && Evento!="" && DJ!="" && Lugar!=""){
+    if(CURP=='Correcto' && Tel=="Correcto" && Email=="Correcto" && Estado!="" && Evento!="" && DJ!="" && Lugar!="" && Nombre !="" && Paterno!="" && Materno!=""){
       if(Estado=="Ciudad de Mexico"){
         if(Delegacion!=""){
           Boton.disabled=false;
@@ -558,4 +563,13 @@
     var valor = document.getElementById("invitados").value;
     var mod = document.getElementById("numInv");
     mod.innerHTML=valor;
+  }
+
+  function triada(){
+    evalEmail();
+    evalTelefono();
+    evaluaCURP();
+    cambiaInvitados();
+    fechaMueve();
+    horaMueve();
   }
