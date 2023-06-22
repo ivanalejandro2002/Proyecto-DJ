@@ -45,6 +45,11 @@ CREATE TABLE `serv_dj` (
   `Lugar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `admin_dj` (
+  `User` text NOT NULL,
+  `Pass` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -54,8 +59,15 @@ CREATE TABLE `serv_dj` (
 --
 ALTER TABLE `serv_dj`
   ADD PRIMARY KEY (`Folio`(20));
-COMMIT;
 
+
+ALTER TABLE `admin_dj`
+  ADD PRIMARY KEY (`User`(5));
+
+
+INSERT INTO `admin_dj`
+  VALUES ('admin','admin');
+COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
