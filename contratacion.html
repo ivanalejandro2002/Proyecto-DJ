@@ -10,7 +10,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body class="grey darken-fondo2">
+<body class="grey darken-fondo2" onload="triada()">
   <nav class="grey darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo"><img src="imgs/logoP4.png"  id="logoP"></a>
       <ul class="right hide-on-med-and-down">
@@ -45,6 +45,25 @@
       <div style="display:block" class ="container grey lighten-3 estiloMenus" id="contenedorContacto"><!--En esta posición colocar el color representativo de la empresa-->
         <h2>Contacto:</h2>
         <div class = "section">
+          
+          <div class="row">
+            <div class="input-field col l4 m4 s4 "> 
+              <input id="Nombre" type="text" onchange="activarBoton()" name="Nombre">
+              <label for="CURP">Nombre(S)</label>
+            </div>
+            
+            <div class="input-field col l4 m4 s4 "> 
+              <input id="ApPat" type="text" onchange="activarBoton()" name="ApPat">
+              <label for="ApPat">Apellido Paterno></label>
+            </div>
+            
+            <div class="input-field col l4 m4 s4 "> 
+              <input id="ApMat" type="text" onchange="activarBoton()" name="ApMat">
+              <label for="ApMat">Apellido Materno</label>
+            </div>
+        </div>
+          
+          
           <div class="row">
               <div class="input-field col l4 m6 s12 "> 
                 <i class="material-icons prefix red-text">perm_identity</i>
@@ -172,11 +191,11 @@
               <i class="material-icons prefix red-text">access_time</i>
               <select name="Hora" id="Hora" onchange="horaMueve()">
                 <option value="" disabled selected>--Seleccione la hora--</option>
-                <option value="1">7:00AM - 12:00PM</option>
-                <option value="2">14:00PM - 19:00PM</option>
-                <option value="3">21:00PM - 2:00AM</option>
+                <option value="7:00AM - 12:00PM">7:00AM - 12:00PM</option>
+                <option value="14:00PM - 19:00PM">14:00PM - 19:00PM</option>
+                <option value="21:00PM - 2:00AM">21:00PM - 2:00AM</option>
               </select>
-              <label for= "horaEvento">Hora del evento:</label>
+              <label for= "Hora">Hora del evento:</label>
             </div>
 
           </div>

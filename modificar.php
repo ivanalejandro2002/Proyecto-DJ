@@ -11,10 +11,9 @@ if (!$enlace){
     echo "Error en la conexion con el servidor";
 }
 
-$Folio = rand(1,99);
-$Nombre = rand(1,99);
-$ApellidoPaterno = rand(1,99);
-$ApellidoMaterno = rand(1,99);
+$Nombre = $_POST["Nombre"] ?? null;
+$ApellidoPaterno = $_POST["ApPat"] ?? null;
+$ApellidoMaterno = $_POST["ApMat"] ?? null;
 $Correo = $_POST["email"] ?? null;
 $CURP = $_POST["CURP"] ?? null;
 $Telefono = $_POST["telefono"] ?? null;
@@ -22,9 +21,12 @@ $EntidadFederativa = $_POST["estados"] ?? null;
 $Alcaldia = $_POST["seleccionDelegacion"] ?? null;
 $Evento = $_POST["eventosTipo"] ?? null;
 $FechaEvento = $_POST["fechaEvento"] ?? null;
-$HoraEvento = $_POST["horaEvento"] ?? null;
-$NumeroInvitados = rand(1,99);
-$DJ= rand(1,99);
+$HoraEvento = $_POST["Hora"] ?? null;
+$NumeroInvitados = $_POST["invitados"] ?? null;
+$DJ= $_POST["DJ"] ?? null;
+$Lugar = $_POST["Lugar"] ?? null;
+
+$Folio = "$CURP $FechaEvento";
 /*
 $insertarDatos = "INSERT INTO serv_dj VALUES('$Folio',
                                             '$Nombre',
@@ -109,8 +111,8 @@ header('Location: index.html');
       <div style="text-align:left ;">
       <ol>
         <li>Nombre: <?php echo $Nombre?></li>
-        <li>Apellido Paterno: <?php echo $Nombre?></li>
-        <li>Apellido Materno: <?php echo $Nombre?></li>
+        <li>Apellido Paterno: <?php echo $ApellidoPaterno?></li>
+        <li>Apellido Materno: <?php echo $ApellidoMaterno?></li>
         <li>Correo: <?php echo $Correo?></li>
         <li>CURP: <?php echo $CURP?></li>
         <li>Telefono: <?php echo $Telefono?></li>
@@ -134,20 +136,21 @@ header('Location: index.html');
         <div class="row">
           <div class="input-field col l6 m6 s6 offset-l4">
           <form id ="formModificar" method="POST" action="contratacion2.php">
-          <input type="hidden" name="folio" value="<?php echo $Folio; ?>">
-          <input type="hidden" name="nombre" value="<?php echo $Nombre; ?>">
-          <input type="hidden" name="apellidoPaterno" value="<?php echo $ApellidoPaterno; ?>">
-          <input type="hidden" name="apellidoMaterno" value="<?php echo $ApellidoMaterno; ?>">
-          <input type="hidden" name="correo" value="<?php echo $Correo; ?>">
-          <input type="hidden" name="curp" value="<?php echo $CURP; ?>">
+          <input type="hidden" name="Folio" value="<?php echo $Folio; ?>">
+          <input type="hidden" name="Nombre" value="<?php echo $Nombre; ?>">
+          <input type="hidden" name="ApPat" value="<?php echo $ApellidoPaterno; ?>">
+          <input type="hidden" name="ApMat" value="<?php echo $ApellidoMaterno; ?>">
+          <input type="hidden" name="email" value="<?php echo $Correo; ?>">
+          <input type="hidden" name="CURP" value="<?php echo $CURP; ?>">
           <input type="hidden" name="telefono" value="<?php echo $Telefono; ?>">
-          <input type="hidden" name="entidadFederativa" value="<?php echo $EntidadFederativa; ?>">
-          <input type="hidden" name="alcaldia" value="<?php echo $Alcaldia; ?>">
-          <input type="hidden" name="evento" value="<?php echo $Evento; ?>">
+          <input type="hidden" name="estados" value="<?php echo $EntidadFederativa; ?>">
+          <input type="hidden" name="seleccionDelegacion" value="<?php echo $Alcaldia; ?>">
+          <input type="hidden" name="eventosTipo" value="<?php echo $Evento; ?>">
           <input type="hidden" name="fechaEvento" value="<?php echo $FechaEvento; ?>">
-          <input type="hidden" name="horaEvento" value="<?php echo $HoraEvento; ?>">
-          <input type="hidden" name="numeroInvitados" value="<?php echo $NumeroInvitados; ?>">
-          <input type="hidden" name="dj" value="<?php echo $DJ; ?>">
+          <input type="hidden" name="Hora" value="<?php echo $HoraEvento; ?>">
+          <input type="hidden" name="invitados" value="<?php echo $NumeroInvitados; ?>">
+          <input type="hidden" name="DJ" value="<?php echo $DJ; ?>">
+          <input type="hidden" name="Lugar" value="<?php echo $Lugar; ?>">
           <input type="submit" value="Modificar" onclick="modificarFormulario()" class="btn">
 
 
@@ -170,6 +173,7 @@ header('Location: index.html');
             <input type="hidden" name="horaEvento" value="<?php echo $HoraEvento; ?>">
             <input type="hidden" name="numeroInvitados" value="<?php echo $NumeroInvitados; ?>">
             <input type="hidden" name="dj" value="<?php echo $DJ; ?>">
+            <input type="hidden" name="lugar" value="<?php echo $Lugar; ?>">
             <input type="submit" value="Enviar" onclick="enviarFormulario()" class="btn">
         
             </form>
