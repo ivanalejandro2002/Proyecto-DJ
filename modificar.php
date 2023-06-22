@@ -26,7 +26,7 @@ $NumeroInvitados = $_POST["invitados"] ?? null;
 $DJ= $_POST["DJ"] ?? null;
 $Lugar = $_POST["Lugar"] ?? null;
 
-$Folio = "$CURP $FechaEvento";
+$Folio = "$CURP$FechaEvento";
 /*
 $insertarDatos = "INSERT INTO serv_dj VALUES('$Folio',
                                             '$Nombre',
