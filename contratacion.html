@@ -138,7 +138,7 @@
         <h2>Evento:</h2>
         <div class="section">
           <div class="row">
-            <div class="input-field col l12 m12 s12">
+            <div class="input-field col l6 m6 s12">
               <i class="material-icons prefix red-text">event</i>
               <select id="eventosTipo" name="eventosTipo" onchange="activarBoton()">
                 <option value="" disabled selected>--Escoja el tipo de evento--</option>
@@ -150,6 +150,14 @@
                 <option value="Otro">Otro</option>
               </select>
               <label>Tipo de Evento:</label>
+            </div>
+            <div class="input-field col l6 m6 s12" style="position:relative; bottom:21px">
+              
+              <p class="range-field">
+                <span><i class="material-icons prefix red-text" style="position:relative;">person_add</i></span>
+                Número de Invitados: <span id="numInv">138</span>
+                <input type="range" name="invitados" id="invitados" min="75" max="200" onchange="cambiaInvitados()"/>
+              </p>
             </div>
           </div>
           <div class="row">

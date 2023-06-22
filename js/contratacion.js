@@ -553,7 +553,9 @@
       mDJs.style.display ="block";
       mlugares.style.display="block";
     }
-
-
-    
+  }
+  function cambiaInvitados(){
+    var valor = document.getElementById("invitados").value;
+    var mod = document.getElementById("numInv");
+    mod.innerHTML=valor;
   }
