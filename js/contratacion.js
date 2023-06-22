@@ -121,6 +121,40 @@
     off.className=off.className.replace(reg,' ');
   }
 
+  function activarBoton(){
+    var CURP = document.getElementById("helperCURP").innerHTML;
+    var Tel = document.getElementById("helperTelefono").innerHTML.substring(0,8);
+    var Email = document.getElementById("helperEmail").innerHTML;
+    var Estado = document.getElementById("estados").value;
+    var Delegacion = document.getElementById("seleccionDelegacion").value;
+    var Evento = document.getElementById("eventosTipo").value;
+    var DJ = document.getElementById("DJ").value;
+    var Lugar =  document.getElementById("Lugar").value;
+    var Boton = document.getElementById("MandarForm");
+    /*console.log(CURP+","+Tel+","+Email+","+Estado+","+Delegacion+","+Evento+","+DJ+","+Lugar+"\n");
+    console.log(CURP=='Correcto');
+    console.log(Tel=='Correcto');
+    console.log(Email=="Correcto");
+    console.log(Estado!="" && Evento!="" && DJ!="" && Lugar!="");*/
+    if(CURP=='Correcto' && Tel=="Correcto" && Email=="Correcto" && Estado!="" && Evento!="" && DJ!="" && Lugar!=""){
+      if(Estado=="Ciudad de Mexico"){
+        if(Delegacion!=""){
+          Boton.disabled=false;
+          return;
+        }else{
+          Boton.disabled=true;
+        }
+      }else{
+        Boton.disabled=false;
+        return;
+      }
+    }
+    Boton.disabled=true;
+    return;
+  }
+
+
+
   function evaluaCURP(){
     var clavesEstado = ['AS','BC','BS','CC','CS','CH','DF','CL','CM','DG','GT','GR','HG','JC','MC','MN','MS','NT','NL','OC','PL','QO','QR','SP','SL','SR','TC','TS','TL','VZ','YN','ZS'];
     const existencia = new Set(clavesEstado);
@@ -232,12 +266,12 @@
       var veredicto = document.getElementById("helperCURP");
       veredicto.innerHTML='Correcto';
       veredicto.style.color='green';
+      activarBoton();
     }else{
       var veredicto = document.getElementById("helperCURP");
       veredicto.innerHTML=mensaje;
       veredicto.style.color='red';
     }
-
   }
 
   function evalTelefono(){
@@ -377,14 +411,41 @@
 
     if(aux){
       var veredicto = document.getElementById("helperTelefono");
+      mens = "Correcto: " +mens;
       veredicto.innerHTML=mens;
       veredicto.style.color='green';
+      activarBoton();
     }else{
       var veredicto = document.getElementById("helperTelefono");
       veredicto.innerHTML=mens;
       veredicto.style.color='red';
     }
 
+  }
+
+  function evalEmail(){
+    var elemento = document.getElementById("email").value;
+    let arroba=false;
+    let puntoAlgo = false;
+    if(elemento.length==0){
+      var veredicto = document.getElementById("helperEmail");
+      veredicto.innerHTML="Esperando...";
+      veredicto.style.color='black';
+    }
+    for(i=1;i<elemento.length;i++){
+      if(elemento[i]=='@' && i<elemento.length-1 && elemento[i+1]!='.')arroba=true;
+      if(elemento[i]=='.' && arroba && i<elemento.length-1)puntoAlgo=true;
+    }
+    if(puntoAlgo && arroba){
+      var veredicto = document.getElementById("helperEmail");
+      veredicto.innerHTML="Correcto";
+      veredicto.style.color='green';
+      activarBoton();
+    }else{
+      var veredicto = document.getElementById("helperEmail");
+      veredicto.innerHTML="Correo inválido";
+      veredicto.style.color='red';
+    }
   }
 
   function delegacionVisual(){
@@ -397,6 +458,7 @@
       off.style.display = "none";
       document.getElementById('seleccionDelegacion').value="";
     }
+    activarBoton();
   }
 
 
@@ -411,7 +473,58 @@
     var mhoras = document.getElementById("muestraHora");
     var mDJs = document.getElementById("muestraDJ");
     var mlugares = document.getElementById("muestraLugar");
-    if(x==""){
+
+    let correcto = true;
+    if(x.length!=12){
+      correcto=false;
+    }
+
+    let aux = x[0]+x[1]+x[2];
+    if(aux!='Jan' &&aux!='Feb' &&aux!='Mar' &&aux!='Apr' &&aux!='May' &&aux!='Jun' &&aux!='Jul' &&aux!='Aug' &&aux!='Sep' &&aux!='Oct' &&aux!='Nov' &&aux!='Dec'){
+      correcto = false;
+    }
+    
+    let limite =0;
+    if(aux =='Jan' || aux=='Mar' || aux=='May' || aux=='Jul' || aux=='Aug' || aux=='Oct' || aux=='Dec'){
+      limite=31;
+    }else if(aux=='Apr' || aux=='Jun' ||aux=='Sep' || aux=='Nov'){
+      limite=30;
+    }else{
+      limite=28;
+    }
+
+    let mes= aux;
+    
+    if(x[3]!=' ' || x[6]!=',' || x[7]!=' '){
+      correcto=false;
+    }
+    let anio = "";
+    for(let i=8;i<12;i++){
+      if(x[i]<'0' || x[i]>'9'){
+        correcto=false;
+      }
+      anio+=x[i];
+    }
+
+    let dia = "";
+    for(let i=4;i<6;i++){
+      if(x[i]<'0' || x[i]>'9'){
+        correcto=false;
+      }
+      dia+=x[i];
+    }
+    if(correcto && mes=='Feb'){
+      let numanio = parseInt(anio);
+      let numdia = parseInt(dia);
+      if(numanio%4==0 && numanio%100!=0){
+        limite++;
+      }else if(numanio%100==0 && (numanio/100)%4==0){
+        limite++;
+      }
+      if(numdia>limite)correcto=false;
+    }
+
+    if(correcto==false){
       horas.value="";
       mhoras.style.display = "none";
       DJs.value="";
@@ -440,4 +553,7 @@
       mDJs.style.display ="block";
       mlugares.style.display="block";
     }
+
+
+    
   }

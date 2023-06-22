@@ -62,8 +62,9 @@
               
               <div class="input-field col l4 m12 s12">
                 <i class="material-icons prefix red-text">email</i>
-                <input name="email" type="email" class="validate">
+                <input id="email" name="email" type="email" class="validate" onchange="evalEmail()">
                 <label for="email">Correo</label>
+                <span><p id="helperEmail">Esperando...</p></span>
             </div>
           </div>
 
@@ -109,7 +110,7 @@
                     <label>Images in select</label>
               </div>
             <div class="col l6 m6 s12" id="delegaciones" style="display:none">
-                  <select class="icons" id="seleccionDelegacion" name="seleccionDelegacion"> 
+                  <select class="icons" id="seleccionDelegacion" name="seleccionDelegacion" onchange="activarBoton()"> 
                     <option value="" disabled selected>--Escoja su alcaldía--</option>
                     <option value="Azcapotzalco" data-icon='https://i.ibb.co/GPFkvPB/Azcapotzalco.jpg' class="left">Azcapotzalco</option>
                     <option value="Alvaro Obregon" data-icon='https://i.ibb.co/1dHm2J7/Alvaro-Obregon.jpg' class="left">Álvaro Obregón</option>
@@ -139,7 +140,7 @@
           <div class="row">
             <div class="input-field col l12 m12 s12">
               <i class="material-icons prefix red-text">event</i>
-              <select id="eventosTipo" name="eventosTipo">
+              <select id="eventosTipo" name="eventosTipo" onchange="activarBoton()">
                 <option value="" disabled selected>--Escoja el tipo de evento--</option>
                 <option value="Bautizo">Bautizo</option>
                 <option value="Primera Comunión">Primera Comunión</option>
@@ -175,8 +176,8 @@
           <div class="row">
             
             <div class="input-field col l12 m12 s12" id="muestraDJ" style="display:none">
-              <i class="material-icons prefix red-text" onchange="DJMueve()">person</i>
-              <select class="icons" name="DJ" id="DJ">
+              <i class="material-icons prefix red-text">person</i>
+              <select class="icons" name="DJ" id="DJ" onchange="activarBoton()">
                 
                 <option value="" disabled selected>--Escoga al DJ--</option>
                 <option value="Ampere" data-icon="imgs/DJAmpereP.png">DJ Ampere</option>
@@ -188,7 +189,7 @@
             
             <div class="input-field col l12 m12 s12" id="muestraLugar" style="display:none">
               <i class="material-icons prefix red-text">access_time</i>
-              <select class="icons" name="Lugar" id="Lugar">
+              <select class="icons" name="Lugar" id="Lugar" onchange="activarBoton()">
                 <option value="" disabled selected>--Escoga el lugar del evento--</option>
                 <option value="Fuente" data-icon="imgs/salon_1.jpeg">Salón la Fuente</option>
                 <option value="Roma" data-icon="imgs/salon_2.jpeg">Salón Roma</option>
@@ -207,7 +208,7 @@
       <div clas="container">
         <div class="row">
           <div class="input-field col l6 m6 s6 offset-l4">
-            <input type="submit" class="btn">
+            <input type="submit" class="btn" disabled="true" id="MandarForm">
             <input type="reset" class="btn" value="Limpiar">
           </div>
         </div>
