@@ -155,14 +155,48 @@
             
             <div class="input-field col l6 m6 s12">
               <i class="material-icons prefix red-text">local_play</i>
-              <input name="fechaEvento" type="text" class="datepicker" placeholder="">
+              <input id="fechaEvento" name="fechaEvento" type="text" class="datepicker" placeholder="" onchange="fechaMueve()">
               <label for="fechaEvento" >Fecha del evento:</label>
-          </div>
+            </div>
             
-            <div class="input-field col l6 m6 s12">
+            <div class="input-field col l6 m6 s12" id="muestraHora" style="display:none">
               <i class="material-icons prefix red-text">access_time</i>
-              <input name = "horaEvento" type="text" class="timepicker" placeholder="">
+              <select name="Hora" id="Hora" onchange="horaMueve()">
+                <option value="" disabled selected>--Seleccione la hora--</option>
+                <option value="1">7:00AM - 12:00PM</option>
+                <option value="2">14:00PM - 19:00PM</option>
+                <option value="3">21:00PM - 2:00AM</option>
+              </select>
               <label for= "horaEvento">Hora del evento:</label>
+            </div>
+
+          </div>
+
+          <div class="row">
+            
+            <div class="input-field col l12 m12 s12" id="muestraDJ" style="display:none">
+              <i class="material-icons prefix red-text" onchange="DJMueve()">person</i>
+              <select class="icons" name="DJ" id="DJ">
+                
+                <option value="" disabled selected>--Escoga al DJ--</option>
+                <option value="Ampere" data-icon="imgs/DJAmpereP.png">DJ Ampere</option>
+                <option value="Fourier" data-icon="imgs/DJFourierP.png">DJ Fourier</option>
+                <option value="Trooper" data-icon="imgs/DJTrooperP.png">DJ Trooper</option>
+              </select>
+              <label>DJ del evento:</label>
+            </div>
+            
+            <div class="input-field col l12 m12 s12" id="muestraLugar" style="display:none">
+              <i class="material-icons prefix red-text">access_time</i>
+              <select class="icons" name="Lugar" id="Lugar">
+                <option value="" disabled selected>--Escoga el lugar del evento--</option>
+                <option value="Fuente" data-icon="imgs/salon_1.jpeg">Salón la Fuente</option>
+                <option value="Roma" data-icon="imgs/salon_2.jpeg">Salón Roma</option>
+                <option value="Pekes" data-icon="imgs/salon_3.jpg">Salón Pekes</option>
+                <option value="Escondida" data-icon="imgs/jardin_1.jpg">Jardín la Escondida</option>
+                <option value="Amanecer" data-icon="imgs/jardin_2.jpg">Jardín Amanecer</option>
+              </select>
+              <label>Lugar del evento:</label>
             </div>
 
           </div>
