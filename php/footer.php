@@ -15,46 +15,54 @@
               <li><a class="white-text" href="#!">Luis</a></li>
               <li><a class="white-text" href="#!">Mario</a></li>
             </ul>
-            </div>
-              <div class="col l3 s12">
-                <h5 class="white-text">GitHub</h5>
-                <ul>
-                  <li>
-                    <div class="col s2">
-                      <img src="imgs/OldRevan66.png" class="circle responsive-img">
-                    </div>
-                    <div class="col s10">
-                      <a class="white-text" href="https://github.com/OldRevan66">OldRevan66</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col s2">
-                      <img src="imgs/ivanalejandro2002.png" class="circle responsive-img">
-                      </div>
-                      <div class="col s10">
-                        <a class="white-text" href="https://github.com/ivanalejandro2002">ivanalejandro2002</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col s2">
-                      <img src="imgs/Wuiszho.jpeg" class="circle responsive-img">
-                    </div>
-                    <div class="col s10">
-                      <a class="white-text" href="https://github.com/Wuiszho">Wuiszho</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col s2">
-                      <img src="imgs/MarioARC21.jpeg" class="circle responsive-img">
-                    </div>
-                    <div class="col s10">
-                      <a class="white-text" href="https://github.com/MarioARC21">MarioARC21</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">GitHub</h5>
+            <ul>
+              <li>
+                <div class="row s12 m12 l12">
+                  <div class="col s2 m2 l2">
+                    <img src="imgs/OldRevan66.png" class="circle responsive-img">
+                  </div>
+                  <div class="col s10">
+                    <a class="white-text" href="https://github.com/OldRevan66">OldRevan66</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row s12 m12 l12">
+                  <div class="col s2">
+                    <img src="imgs/ivanalejandro2002.png" class="circle responsive-img">
+                    </div>
+                    <div class="col s10">
+                      <a class="white-text" href="https://github.com/ivanalejandro2002">ivanalejandro2002</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row s12 m12 l12">
+                  <div class="col s2">
+                    <img src="imgs/Wuiszho.jpeg" class="circle responsive-img">
+                  </div>
+                      <div class="col s10">
+                    <a class="white-text" href="https://github.com/Wuiszho">Wuiszho</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row s12 m12 l12">
+                  <div class="col s2 l2 m2">
+                    <img src="imgs/MarioARC21.jpeg" class="circle responsive-img">
+                  </div>
+                  <div class="col s10">
+                    <a class="white-text" href="https://github.com/MarioARC21">MarioARC21</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
         <div class="footer-copyright">
           <div class="container">
             Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>

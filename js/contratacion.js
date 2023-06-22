@@ -142,7 +142,7 @@
     console.log(Email=="Correcto");
     console.log(Estado!="" && Evento!="" && DJ!="" && Lugar!="");*/
     if(CURP=='Correcto' && Tel=="Correcto" && Email=="Correcto" && Estado!="" && Evento!="" && DJ!="" && Lugar!="" && Nombre !="" && Paterno!="" && Materno!=""){
-      if(Estado=="Ciudad de Mexico"){
+      if(Estado=="Ciudad de México"){
         if(Delegacion!=""){
           Boton.disabled=false;
           return;
@@ -239,7 +239,6 @@
     }
 
     if((!esLetra(ele[11]) || !esLetra(ele[12])) && aux){
-      alert(":/");
       aux=0;
       mensaje="El codigo de estado no existe";
     }
@@ -455,7 +454,7 @@
 
   function delegacionVisual(){
     var valor = document.getElementById("estados").value;
-    if(valor == "Ciudad de Mexico"){
+    if(valor == "Ciudad de México"){
       var off = document.getElementById('delegaciones');
       off.style.display = "block";
     }else{
