@@ -4,10 +4,10 @@ session_start();
 if(isset($_SESSION['TxtUsr'])){ //La sesión existe sí y solo si pasó por le login y los datos fueron correctos.
   $TxtUsr = $_SESSION['TxtUsr'];
   $TxtPsw = $_SESSION['TxtPsw'];
-  header("AceptaAdmin.php");
+  header("location:AceptaAdmin.php");
 
 }else{
-  
+  header("location:admin.php");
 }
 
 ?>
@@ -27,7 +27,7 @@ if(isset($_SESSION['TxtUsr'])){ //La sesión existe sí y solo si pasó por le l
   <nav class="grey darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo"><img src="imgs/logo_FINAL.png"  id="logoP"></a>
       <ul class="right hide-on-med-and-down">
-        <?
+        <?php
         if(isset($_SESSION['TxtUsr'])){
           require 'php/Bienvenido.php';
         }

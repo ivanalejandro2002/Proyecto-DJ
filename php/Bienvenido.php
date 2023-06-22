@@ -1,1 +1,1 @@
-<h1 class="text-black">Bienvenido Administrador</h1>
+<li><a href="#">Bienvenido Administrador</a></li>
