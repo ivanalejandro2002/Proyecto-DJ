@@ -1,4 +1,6 @@
-<?php require 'php/header.php'; ?>
+<?php require 'php/inicioH.php';
+require 'php/scriptComprobante.php';
+ require 'php/finH.php';?>
 
   <div class="white darken-1">
     <br>
