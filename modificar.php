@@ -26,7 +26,52 @@ $NumeroInvitados = $_POST["invitados"] ?? null;
 $DJ= $_POST["DJ"] ?? null;
 $Lugar = $_POST["Lugar"] ?? null;
 
-$Folio = "$CURP$FechaEvento";
+$x = "$FechaEvento[0]$FechaEvento[1]$FechaEvento[2]";
+$mes = "";
+$dia = "";
+$anio = "";
+switch($x){
+  case 'Jan':
+    $mes="01";
+    break;
+  case 'Feb':
+    $mes="02";
+    break;
+  case 'Mar':
+    $mes="03";
+    break;
+  case 'Apr':
+    $mes="04";
+    break;
+  case 'May':
+    $mes="05";
+    break;
+  case 'Jun':
+    $mes="06";
+    break;
+  case 'Jul':
+    $mes="07";
+    break;
+  case 'Aug':
+    $mes="08";
+    break;
+  case 'Sep':
+    $mes="09";
+    break;
+  case 'Oct':
+    $mes="10";
+    break;
+  case 'Nov':
+    $mes="11";
+    break;
+  case 'Dec':
+    $mes="12";
+    break;
+}
+$dia = "$FechaEvento[4]$FechaEvento[5]";
+$anio = "$FechaEvento[8]$FechaEvento[9]$FechaEvento[10]$FechaEvento[11]";
+
+$Folio = "$CURP$dia$mes$anio";
 /*
 $insertarDatos = "INSERT INTO serv_dj VALUES('$Folio',
                                             '$Nombre',

@@ -26,8 +26,7 @@ function footer(){
 $folioQuery=$_POST["folio"];
 
 $conexion = mysqli_connect("localhost","root","","serv_dj");
-$consulta = "SELECT * FROM serv_dj WHERE Folio = $folioQuery";
-$echo $consulta;
+$consulta = "SELECT * FROM serv_dj WHERE Folio = '$folioQuery'";
 $resultado = mysqli_query($conexion,$consulta);
 $datos = mysqli_fetch_array($resultado);
 $contenidoDatos = "$datos[0] - $datos[1] $datos[2] $datos[3] $datos[4] $datos[5] $datos[6] $datos[7] $datos[8] $datos[9] $datos[10] $datos[11] $datos[12] $datos[13] $datos[14]";

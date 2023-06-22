@@ -60,7 +60,7 @@ $lugar=$_POST["lugar"] ?? null;
   <div class="grey darken-vacio">
 
   <div class="input-field col l6 m6 s6 offset-l4">
-        <form  id ="formAceptaCont" method="POST" action="AceptaCont.php">
+        <form  id ="formAceptaCont" method="POST" action="pdfBaseDatos.php">
             <input  type="hidden" name="folio" value="<?php echo $Folio; ?>">
             <input type="hidden" name="nombre" value="<?php echo $Nombre; ?>">
             <input type="hidden" name="apellidoPaterno" value="<?php echo $ApellidoPaterno; ?>">
@@ -76,7 +76,6 @@ $lugar=$_POST["lugar"] ?? null;
             <input type="hidden" name="numeroInvitados" value="<?php echo $NumeroInvitados; ?>">
             <input type="hidden" name="dj" value="<?php echo $DJ; ?>">
             <input type="hidden" name="lugar" value="<?php echo $Lugar; ?>">
-            <input type="submit" value="Enviar" onclick="enviarFormulario()" class="btn">
         </form>
   </div>
 
