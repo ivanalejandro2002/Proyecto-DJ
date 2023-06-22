@@ -398,3 +398,46 @@
       document.getElementById('seleccionDelegacion').value="";
     }
   }
+
+
+
+  function fechaMueve(){
+    var fechas = document.getElementById("fechaEvento");
+    var x = fechas.value;
+    var horas = document.getElementById("Hora");
+    var DJs = document.getElementById("DJ");
+    var lugares = document.getElementById("Lugar");
+
+    var mhoras = document.getElementById("muestraHora");
+    var mDJs = document.getElementById("muestraDJ");
+    var mlugares = document.getElementById("muestraLugar");
+    if(x==""){
+      horas.value="";
+      mhoras.style.display = "none";
+      DJs.value="";
+      mDJs.style.display="none";
+      lugares.value="";
+      mlugares.style.display="none";
+    }else{
+      mhoras.style.display ="block";
+    }
+  }
+  
+  function horaMueve(){
+    var horas = document.getElementById("Hora");
+    var x = horas.value;
+    var DJs = document.getElementById("DJ");
+    var lugares = document.getElementById("Lugar");
+
+    var mDJs = document.getElementById("muestraDJ");
+    var mlugares = document.getElementById("muestraLugar");
+    if(x==""){
+      DJs.value="";
+      mDJs.style.display="none";
+      lugares.value="";
+      mlugares.style.display="none";
+    }else{
+      mDJs.style.display ="block";
+      mlugares.style.display="block";
+    }
+  }
