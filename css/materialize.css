@@ -2133,6 +2133,11 @@
   background: rgb(49,62,66);
   background: linear-gradient(0deg, rgba(49,62,66,1) 0%, rgba(49,49,49,1) 85%);
 }
+
+.grey-darken-opaque{
+  background: rgba(49,49,49,.8);
+}
+
 .grey.darken-fondo2 {
   background-color: #313131 !important;
 }
