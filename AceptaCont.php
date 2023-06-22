@@ -18,8 +18,9 @@ $lugar=$_POST["lugar"] ?? null;
 
 ?>
 
-
-<?php require 'php/header.php'; ?>
+<?php require 'php/inicioH.php';
+require 'php/scriptComprobante.php';
+require 'php/finH.php'; ?>
 
   <div class="grey darken-vacio">
 

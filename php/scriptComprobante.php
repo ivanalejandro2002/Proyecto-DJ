@@ -1,7 +1,7 @@
 <script>
     function mandarDatosPDF() {
-        document.getElementById("mandaPDF").action = "recuperaPDF.php";
-        document.getElementById("mandaPDF").submit();
+        document.getElementById("formAceptaCont").action = "pdfBaseDatos.php";
+        document.getElementById("formAceptaCont").submit();
     }
   </script>
   

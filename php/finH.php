@@ -1,5 +1,10 @@
 </head>
 <body class="grey darken-fondo2">
+<?php
+        if(isset($_SESSION['TxtUsr'])){
+          require 'php/Dropdown.php';
+        }
+        ?>
 
     <nav class="grey darken-4" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo"><img src="imgs/logo_FINAL.png"  id="logoP"></a>
@@ -16,6 +21,11 @@
       </ul>
       
       <ul id="nav-mobile" class="sidenav">
+      <?php
+        if(isset($_SESSION['TxtUsr'])){
+          echo "<li><a class='white-text' href='php/cerrarSesion.php'>CerrarSesion</a></li>";
+        }
+        ?>
         <li><a href="contratacion.php">Contratación</a></li>
         <li><a href="comprobante.php">Comprobante</a></li>
         <li><a href="admin.php">Admin</a></li>
