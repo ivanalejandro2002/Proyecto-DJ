@@ -24,6 +24,11 @@ if(isset($_SESSION['TxtUsr'])){
 
 </head>
 <body class="grey darken-fondo2">
+  <?php
+    if(isset($_SESSION['TxtUsr'])){
+      require 'php/Dropdown.php';
+    }
+  ?>
   <nav class="grey darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo"><img src="imgs/logoP4.png"  id="logoP"></a>
       <ul class="right hide-on-med-and-down">
@@ -39,6 +44,11 @@ if(isset($_SESSION['TxtUsr'])){
       </ul>
       
       <ul id="nav-mobile" class="sidenav">
+      <?php
+          if(isset($_SESSION['TxtUsr'])){
+            echo "<li><a href='php/cerrarSesion.php'>CerrarSesion</a></li>";
+          }
+        ?>
         <li><a href="contratacion.html">Contratación</a></li>
         <li><a href="comprobante.html">Comprobante</a></li>
         <li><a href="admin.html">Admin</a></li>

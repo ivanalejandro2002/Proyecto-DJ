@@ -1,1 +1,1 @@
-<li><a href="#">Bienvenido Administrador</a></li>
+<li><a class="dropdown-trigger" href="#!" data-target="cerrarSesion">Bienvenido Administrador<i class="material-icons right">arrow_drop_down</i></a></li>

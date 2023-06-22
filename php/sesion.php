@@ -14,15 +14,15 @@ $TxtPsw = $_POST['TxtPsw'];
   $resultado = mysqli_query($enlace, $sql);
   $numResultado = mysqli_num_rows($resultado);
 
-  if($numResultado == 2){
+  if($numResultado == 1){
     $_SESSION['TxtUsr'] = $_POST['TxtUsr'];
     $_SESSION['TxtPsw'] = $_POST['TxtPsw'];
-    
-    header("location:AceptaAdmin.php");
+    unset($_SESSION["Error"]); 
+    header("location:../AceptaAdmin.php");
 
   }else{
     $_SESSION["Error"] = "1";
-    header("location:admin.php");
+    header("location:../admin.php");
   }
 
 ?>

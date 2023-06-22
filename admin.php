@@ -6,8 +6,6 @@ if(isset($_SESSION['TxtUsr'])){ //La sesión existe sí y solo si pasó por le l
   $TxtPsw = $_SESSION['TxtPsw'];
   header("location:AceptaAdmin.php");
 
-}else{
-  header("location:admin.php");
 }
 
 ?>
@@ -48,7 +46,7 @@ if(isset($_SESSION['TxtUsr'])){ //La sesión existe sí y solo si pasó por le l
   </nav>
   <div class="grey darken-vacio">
     <br>
-    <form method="post" action="sesion.php">
+    <form method="post" action="php/sesion.php">
       
       <div style="display:block" class ="container" id="contenedorLogin">
         
