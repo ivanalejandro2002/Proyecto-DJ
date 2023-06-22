@@ -54,23 +54,6 @@ require 'php/finH.php';
 
 </head>
 <body class="grey darken-fondo2" onload="triadaint()">
-  <nav class="grey darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo"><img src="imgs/logoP4.png"  id="logoP"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="contratacion.html">Contratación</a></li>
-        <li><a href="comprobante.html">Comprobante</a></li>
-        <li><a href="admin.html">Admin</a></li>
-        
-      </ul>
-      
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="contratacion.html">Contratación</a></li>
-        <li><a href="comprobante.html">Comprobante</a></li>
-        <li><a href="admin.html">Admin</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
   <div class="grey darken-vacio">
 
     <div class="container">
